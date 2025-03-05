@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: dummy
+  name: dummy
+spec:
+  containers:
+  - image: nginx
+    name: dummy
+    resources: {}
+  nodeSelector: 
+   type: gpu
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
