@@ -86,3 +86,31 @@ kubectl apply -f initContainer.yaml
 ```
 kubectl exec -it pods/kubesimplify -- curl localhost
 ```
+
+## Static pods 
+
+### SSH into the node where kubelet is present 
+```
+ssh node01
+```
+```
+cat <<EOF >/etc/kubernetes/manifests/nginx.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+EOF
+```
+
+
