@@ -4,7 +4,10 @@ Link to the video: https://www.youtube.com/watch?v=mTbx8jOJ5L0&t=907s
 
 Link to the gist: https://gist.githubusercontent.com/saiyam1814/bb16f1ad8505e83342dd04370183ed4e/raw/1c1e1d97fc18d5c3afa5686024adca82e365b6a4/kubernetes132.sh
 
+
+```
 curl https://gist.githubusercontent.com/saiyam1814/bb16f1ad8505e83342dd04370183ed4e/raw/1c1e1d97fc18d5c3afa5686024adca82e365b6a4/kubernetes132.sh > install.sh
+```
 
 ## Bootstrapping Kubernetes cluster with kubeadm
 ```
@@ -13,7 +16,11 @@ sh install.sh
 
 ## Upgrade kubernetes cluster from 1.32.1 to 1.32.2
 
+Link to the gist: https://gist.githubusercontent.com/saiyam1814/2064faf4ffe9d5cd1b0421709dee35c0/raw/c2d77d1eb6740e9221726d65617a6882a6b1b0d3/gistfile1.txt
+
+```
 curl https://gist.githubusercontent.com/saiyam1814/2064faf4ffe9d5cd1b0421709dee35c0/raw/c2d77d1eb6740e9221726d65617a6882a6b1b0d3/gistfile1.txt > upgrade.sh
+```
 
 ### Steps to upgrade controlplane.
 
@@ -88,7 +95,11 @@ sudo systemctl restart kubelet
 
 ## Etcd backup and restore.
 
+Link to the gist: https://gist.githubusercontent.com/saiyam1814/ae9bf003bc4d89b90612ff757b5358db/raw/181870e70f50dd5f3103dabb00f26c1cf9bd368b/gistfile1.txt 
+
+```
 curl https://gist.githubusercontent.com/saiyam1814/ae9bf003bc4d89b90612ff757b5358db/raw/181870e70f50dd5f3103dabb00f26c1cf9bd368b/gistfile1.txt > backup.sh
+```
 
 ### List etcd pods 
 
@@ -109,8 +120,8 @@ mv etcd-v3.5.9-linux-amd64/etcdutl /usr/local/bin/
 
 ```
 sudo ETCDCTL_API=3 etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key snapshot save /tmp/backup.db
-<!-- Here the --cacert =--trusted-ca-file--cert =--cert-file and key =--key-file -->
 ```
+#### Here the --cacert =--trusted-ca-file--cert =--cert-file and key =--key-file
 
 ### Restore the backup from the snapshot
 
