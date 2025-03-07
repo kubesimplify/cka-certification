@@ -2,7 +2,7 @@ This is the README file for episode 1 of Kubestronaut series.
 
 Link to the video: https://www.youtube.com/watch?v=FNbO99TVOrI&t=3281s
 
-## Scenario 1: Run an application with an nginx image and pod name <your name>.
+## Scenario 1: Run an application with an nginx image and pod name "your name".
 
 ```
 kubectl run kubesimplify --image=nginx
@@ -24,4 +24,9 @@ kubectl api-resources
 ```
 kubectl explain <resource name>
 kubectl explain pod
+```
+
+## Create a single node k3s cluster.
+```
+curl -sfL https://get.k3s.io | sh - 
 ```
