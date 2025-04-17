@@ -1,0 +1,20 @@
+# Save as low-priority-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: low-traffic-service
+  namespace: priority-zone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: low-traffic
+  template:
+    metadata:
+      labels:
+        app: low-traffic
+    spec:
+      priorityClassName: tier-one
+      containers:
+        - name: pause
+          image: k8s.gcr.io/pause:3.1

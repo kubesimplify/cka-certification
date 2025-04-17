@@ -1,0 +1,16 @@
+# Save as priority-classes.yaml
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: tier-one
+value: 1000
+globalDefault: false
+description: "Tier one user workloads"
+---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: tier-two
+value: 2000
+globalDefault: false
+description: "Tier two user workloads"

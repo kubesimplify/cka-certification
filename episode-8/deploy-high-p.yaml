@@ -1,0 +1,19 @@
+# Save as kubesimplify-api.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubesimplify-api
+  namespace: priority-zone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubesimplify
+  template:
+    metadata:
+      labels:
+        app: kubesimplify
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
